@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, render_template
 from api.models import db, Person, Email
 from api.core import create_response, serialize_list, logger
 from sqlalchemy import inspect
@@ -12,8 +12,7 @@ def index():
     # you are now in the current application context with the main.route decorator
     # access the logger with the logger from api.core and uses the standard logging module
     # try using ipdb here :) you can inject yourself
-    logger.info("Hello World!")
-    return "<h1>Hello World!</h1>"
+    return render_template('index.html')
 
 
 # function that is called when you visit /persons

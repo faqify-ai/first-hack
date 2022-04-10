@@ -28,7 +28,7 @@ def create_app(test_config=None):
     if __main__ == "__name__":
         app.run()
     """
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder='templates')
 
     CORS(app)  # add CORS
 
